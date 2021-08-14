@@ -1,7 +1,11 @@
 # gatsby-remark-remove-cjk-breaks
 
-This plugin removes line breaks between CJK characters to avoid an unexpected space between the characters.
+[![npm version](https://badge.fury.io/js/gatsby-remark-remove-cjk-breaks.svg)](https://badge.fury.io/js/gatsby-remark-remove-cjk-breaks)
+[![test](https://github.com/blyoa/gatsby-remark-remove-cjk-breaks/actions/workflows/node.js.yml/badge.svg)](https://github.com/blyoa/gatsby-remark-remove-cjk-breaks/actions/workflows/node.js.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://https://github.com/blyoa/gatsby-remark-remove-cjk-breaks/blob/main/LICENSE)
 
+
+This plugin removes line breaks between CJK characters to avoid an unexpected space between the characters.
 
 ## Example
 
