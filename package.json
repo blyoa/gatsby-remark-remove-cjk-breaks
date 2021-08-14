@@ -1,0 +1,32 @@
+{
+  "name": "gatsby-remark-remove-cjk-breaks",
+  "version": "1.0.0",
+  "description": "Gatsby plugin to remove line breaks between CJK characters",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "remark"
+  ],
+  "author": "blyoa",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "jest": "^27.0.6",
+    "remark": "^14.0.1"
+  },
+  "dependencies": {
+    "unist-util-visit": "^4.0.0"
+  }
+}
