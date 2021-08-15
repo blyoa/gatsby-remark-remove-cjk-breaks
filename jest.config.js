@@ -1,6 +1,7 @@
 module.exports = {
   transformIgnorePatterns: [],
   transform: {
-    '^.+\\.[jt]sx?$': 'babel-jest',
+    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.jsx?$': 'babel-jest',
   },
 }

@@ -1,4 +1,5 @@
 import { visit } from 'unist-util-visit'
+import { Node, Literal, Data } from 'unist'
 
 // prettier-ignore
 /* eslint-disable no-multi-spaces */
@@ -91,15 +92,24 @@ const emojiPattern = [
 ].join('|')
 // Reference:
 // https://unicode.org/reports/tr51/#Definitions
+//
 
 export default (
-  { markdownAST },
+  { markdownAST }: { markdownAST: Node<Data> },
   {
     includeHangul = false,
     includeEmoji = false,
     includeSquaredLatinAbbrs = false,
-    additionalRegexpPairs = undefined,
-  }
+    additionalRegexpPairs,
+  }: {
+    includeHangul?: boolean
+    includeEmoji?: boolean
+    includeSquaredLatinAbbrs?: boolean
+    additionalRegexpPairs?: {
+      beforeBreak?: string
+      afterBreak?: string
+    }[]
+  } = {}
 ) => {
   const charGroup = cjkChars
   if (includeSquaredLatinAbbrs) charGroup.push(...squaredLatinAbbrChars)
@@ -112,7 +122,7 @@ export default (
     { beforeBreak: undefined, afterBreak: undefined },
   ]
 
-  visit(markdownAST, 'text', (node) => {
+  visit(markdownAST, 'text', (node: Literal<string>) => {
     for (const pair of regexpPairs) {
       const patBeforeBreak =
         pattern + (pair.beforeBreak ? `|${pair.beforeBreak}` : '')
@@ -127,6 +137,5 @@ export default (
       node.value = node.value.replace(regexp, '$1$2')
     }
   })
-
   return markdownAST
 }
