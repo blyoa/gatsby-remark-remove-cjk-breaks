@@ -232,6 +232,25 @@ Object {
 }
 `;
 
+exports[`additional regexp support remove a space between a CJK character and an ASCII character 1`] = `
+Object {
+  "position": Object {
+    "end": Object {
+      "column": 6,
+      "line": 3,
+      "offset": 26,
+    },
+    "start": Object {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "text",
+  "value": "中文句子an english word日本語の文",
+}
+`;
+
 exports[`nothing should be changed CJK characters are separated with a space 1`] = `
 Object {
   "position": Object {

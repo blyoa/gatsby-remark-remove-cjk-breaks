@@ -98,8 +98,7 @@ export default (
     includeHangul = false,
     includeEmoji = false,
     includeSquaredLatinAbbrs = false,
-    regexpBeforeBreak = '',
-    regexpAfterBreak = '',
+    additionalRegexpPairs = undefined,
   }
 ) => {
   const charGroup = cjkChars
@@ -109,18 +108,25 @@ export default (
   let pattern = `[${charGroup.join('')}]`
   if (includeEmoji) pattern = `${pattern}|${emojiPattern}`
 
-  const patBeforeBreak =
-    pattern + (regexpBeforeBreak ? `|${regexpBeforeBreak}` : '')
-  const patAfterBreak =
-    pattern + (regexpAfterBreak ? `|${regexpAfterBreak}` : '')
+  const regexpPairs = additionalRegexpPairs ?? [
+    { beforeBreak: undefined, afterBreak: undefined },
+  ]
 
-  const regexp = new RegExp(
-    `(${patBeforeBreak})(?:\r\n|\r|\n)(${patAfterBreak})`,
-    'gu'
-  )
+  visit(markdownAST, 'text', (node) => {
+    for (const pair of regexpPairs) {
+      const patBeforeBreak =
+        pattern + (pair.beforeBreak ? `|${pair.beforeBreak}` : '')
+      const patAfterBreak =
+        pattern + (pair.afterBreak ? `|${pair.afterBreak}` : '')
 
-  visit(markdownAST, 'text', node => {
-    node.value = node.value.replace(regexp, '$1$2')
+      const regexp = new RegExp(
+        `(${patBeforeBreak})(?:\r\n|\r|\n)(${patAfterBreak})`,
+        'gu'
+      )
+
+      node.value = node.value.replace(regexp, '$1$2')
+    }
   })
+
   return markdownAST
 }
