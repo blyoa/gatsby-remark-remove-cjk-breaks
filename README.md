@@ -133,7 +133,7 @@ This setting converts, for example,
 “中文句子an english word日本語の文”
 
 
-### To use ASCII words without a space in CJK text:
+### To use half-width parentheses without a space in CJK text:
 ```js
 // In your gatsby-config.js
 plugins: [
