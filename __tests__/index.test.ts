@@ -1,6 +1,6 @@
 import { remark } from 'remark'
 import { Literal } from 'unist'
-import { visit } from 'unist-util-visit'
+import visit from 'unist-util-visit'
 
 import plugin from '../src'
 

@@ -40,6 +40,6 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "unist-util-visit": "^4.0.0"
+    "unist-util-visit": "^2.0.3"
   }
 }
