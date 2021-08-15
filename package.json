@@ -1,6 +1,6 @@
 {
   "name": "gatsby-remark-remove-cjk-breaks",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Gatsby plugin to remove line breaks between CJK characters",
   "main": "dist/index.js",
   "files": [
