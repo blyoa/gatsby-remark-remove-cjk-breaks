@@ -9,6 +9,9 @@
   "scripts": {
     "test": "jest",
     "build": "npm run clean && tsc",
+    "format": "npm run lint --fix && npm run format:prettier",
+    "format:prettier": "prettier --write ./**/*.{js,ts,yml}",
+    "lint": "eslint --ext .js,.ts .",
     "clean": "rimraf dist/*"
   },
   "keywords": [
