@@ -1,5 +1,5 @@
 import visit from 'unist-util-visit'
-import { Data, Literal, Node } from 'unist'
+import { Literal, Node } from 'unist'
 
 // prettier-ignore
 /* eslint-disable no-multi-spaces */
@@ -95,7 +95,7 @@ const emojiPattern = [
 //
 
 export default (
-  { markdownAST }: { markdownAST: Node<Data> },
+  { markdownAST }: { markdownAST: Node },
   {
     includeHangul = false,
     includeEmoji = false,
