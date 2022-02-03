@@ -17,8 +17,6 @@ describe('nothing should be changed', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('おはようございます。')
-
-      expect(node).toMatchSnapshot()
     })
   })
 
@@ -28,7 +26,6 @@ describe('nothing should be changed', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe(`Good morning.\nHave a nice day.`)
-      expect(node).toMatchSnapshot()
     })
   })
 
@@ -38,7 +35,6 @@ describe('nothing should be changed', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('おはよう ございます。')
-      expect(node).toMatchSnapshot()
     })
   })
 
@@ -52,7 +48,6 @@ describe('nothing should be changed', () => {
       expect(node.value).toBe(`
     おはよう
      ございます。`)
-      expect(node).toMatchSnapshot()
     })
   })
 })
@@ -64,7 +59,6 @@ describe('a line break should be removed', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('上午好。这是个美丽的日子。')
-      expect(node).toMatchSnapshot()
     })
   })
 
@@ -74,7 +68,6 @@ describe('a line break should be removed', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('上午好。这是个美丽的日子。')
-      expect(node).toMatchSnapshot()
     })
   })
 
@@ -84,7 +77,6 @@ describe('a line break should be removed', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('上午好。这是个美丽的日子。')
-      expect(node).toMatchSnapshot()
     })
   })
 
@@ -96,7 +88,6 @@ describe('a line break should be removed', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('おはようございます。今日はいい天気ですね。')
-      expect(node).toMatchSnapshot()
     })
   })
 })
@@ -108,7 +99,6 @@ describe('Hangul support', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('안녕\n하세요')
-      expect(node).toMatchSnapshot()
     })
   })
   it('Hangul characters between a line feed with the option', () => {
@@ -117,7 +107,6 @@ describe('Hangul support', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('안녕하세요')
-      expect(node).toMatchSnapshot()
     })
   })
 
@@ -127,7 +116,6 @@ describe('Hangul support', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe(`Good morning.\nHave a nice day.`)
-      expect(node).toMatchSnapshot()
     })
   })
 })
@@ -142,7 +130,6 @@ describe('squared Latin abbreviation support', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('㎅\n㎆')
-      expect(node).toMatchSnapshot()
     })
   })
 
@@ -155,7 +142,6 @@ describe('squared Latin abbreviation support', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('㎅㎆')
-      expect(node).toMatchSnapshot()
     })
   })
 
@@ -168,7 +154,6 @@ describe('squared Latin abbreviation support', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe(`Good morning.\nHave a nice day.`)
-      expect(node).toMatchSnapshot()
     })
   })
 })
@@ -180,7 +165,6 @@ describe('Emoji support', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('😊\n😊')
-      expect(node).toMatchSnapshot()
     })
   })
   it('Emoji characters are separeted with a line feed with the option', () => {
@@ -189,7 +173,6 @@ describe('Emoji support', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('😊😊')
-      expect(node).toMatchSnapshot()
     })
   })
 
@@ -199,7 +182,6 @@ describe('Emoji support', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe(`Good morning.\nHave a nice day.`)
-      expect(node).toMatchSnapshot()
     })
   })
 })
@@ -218,7 +200,6 @@ describe('additional regexp support', () => {
       expect(node.value).toBe(
         '(全角はデフォルトでサポートしているので)半角の丸括弧を追加しました。'
       )
-      expect(node).toMatchSnapshot()
     })
   })
 
@@ -235,7 +216,6 @@ describe('additional regexp support', () => {
       expect(node.value).toBe(
         '半角の丸括弧(全角の丸括弧はデフォルトに含まれる)を追加しました。'
       )
-      expect(node).toMatchSnapshot()
     })
   })
 
@@ -253,7 +233,6 @@ describe('additional regexp support', () => {
 
     visit(transformed, 'text', (node: Literal<string>) => {
       expect(node.value).toBe('中文句子an english word日本語の文')
-      expect(node).toMatchSnapshot()
     })
   })
 })
