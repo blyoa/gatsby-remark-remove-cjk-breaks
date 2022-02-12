@@ -48,7 +48,7 @@ npm install gatsby-remark-remove-cjk-breaks
 plugins: [
   {
     resolve: `gatsby-transformer-remark`,
-    options: [
+    options: {
       plugins: [
         {
           resolve: `gatsby-remark-remove-cjk-breaks`,
@@ -90,7 +90,7 @@ plugins: [
           },
         },
       ]
-    ]
+    }
   },
 ]
 ```
@@ -105,7 +105,7 @@ plugins: [
 plugins: [
   {
     resolve: `gatsby-transformer-remark`,
-    options: [
+    options: {
       plugins: [
         {
           resolve: `gatsby-remark-remove-cjk-breaks`,
@@ -123,7 +123,7 @@ plugins: [
           },
         },
       ]
-    ]
+    }
   },
 ]
 ```
@@ -139,7 +139,7 @@ This setting converts, for example,
 plugins: [
   {
     resolve: `gatsby-transformer-remark`,
-    options: [
+    options: {
       plugins: [
         {
           resolve: `gatsby-remark-remove-cjk-breaks`,
@@ -157,7 +157,7 @@ plugins: [
           },
         },
       ]
-    ]
+    }
   },
 ]
 ```
