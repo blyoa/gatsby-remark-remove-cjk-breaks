@@ -20,7 +20,7 @@ const cjkChars = [
 
   // Enclosed CJK Letters and Months
   '\\u{3248}-\\u{324F}', // ... Circled numbers on black squares from ARIB STD B24
-  '\\u{3248}-\\u{325F}', // ... Circled numbers
+  '\\u{3251}-\\u{325F}', // ... Circled numbers
   '\\u{327F}',           // ... Symbol (Korean Standard Symbol)
   '\\u{32B1}-\\u{32BF}', // ... Circled numbers
 
