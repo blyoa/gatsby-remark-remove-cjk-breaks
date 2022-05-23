@@ -61,7 +61,7 @@ plugins: [
             // because Korean has a rule to separate characters with a space.
             includeHangul: false,
 
-            // include include squared Latin abbreviation characters.
+            // include squared Latin abbreviation characters.
             // (e.g. ㎅, ㎆) to CJK character set
             // default: false
             includeSquaredLatinAbbrs: false,
